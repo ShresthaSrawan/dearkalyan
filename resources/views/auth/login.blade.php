@@ -1,45 +1,50 @@
-@extends('layouts.master')
+@extends('layouts.master', ['fixedheader' => true])
 
-@section('body')
-    @if(!empty($errors->all()))
-        <div class="alert alert-warning alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
-            <h4><i class="fa fa-warning"></i> Warning!</h4>
-            <ul class="list-unstyled">
-                <?php $dumpErrors = []; ?>
-                @foreach($errors->all() as $pos=>$error)
-                    @if(!in_array($error,$dumpErrors))
-                        <li>{{$error}}</li>
-                        <?php $dumpErrors[] = $error; ?>
-                    @endif
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form class="form" role="form" style="text-align:left;" method="POST" action="{{ url('/login') }}"
-          autocomplete="off">
-        {!! csrf_field() !!}
-        <div class="form-group">
-            <input type="text" class="form-control" id="login" name="login" required>
-            <label for="login">Username/Email</label>
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" id="password" name="password" required>
-            <label for="password">Password</label>
-            <p class="help-block"><a href="{{ url('/password/reset') }}">Forgot?</a></p>
-        </div>
-        <br/>
-        <div class="row">
-            <div class="col-xs-6 text-left">
-                <div class="checkbox checkbox-inline checkbox-styled">
-                    <label>
-                        <input type="checkbox" name="remember"> <span>Remember me</span>
-                    </label>
+@section('content')
+    <div class="row content-wrap">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3>Login</h3>
                 </div>
-            </div><!--end .col -->
-            <div class="col-xs-6 text-right">
-                <button class="btn btn-primary btn-raised" type="submit">Login</button>
-            </div><!--end .col -->
-        </div><!--end .row -->
-    </form>
+                <div class="panel-body">
+                    {!! Form::open(array('url' => url('login'), 'method' => 'post', 'files'=> true)) !!}
+                        <div class="form-group  {{ $errors->has('email') ? 'has-error' : '' }}">
+                            {!! Form::label('email', "E-Mail Address", array('class' => 'control-label')) !!}
+                            <div class="controls">
+                                {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                                <span class="help-block">{{ $errors->first('email', ':message') }}</span>
+                            </div>
+                        </div>
+                        <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
+                            {!! Form::label('password', "Password", array('class' => 'control-label')) !!}
+                            <div class="controls">
+                                {!! Form::password('password', array('class' => 'form-control')) !!}
+                                <span class="help-block">{{ $errors->first('password', ':message') }}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember"> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" style="margin-right: 15px;">
+                                    Login
+                                </button>
+
+                                <a href="{{ url('/password/email') }}">Forgot Your Password?</a>
+                            </div>
+                        </div>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
 @stop

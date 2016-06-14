@@ -1,53 +1,12 @@
 @extends('layouts.master')
 
-@section('titile', 'Dearkalyan')
+@section('title', 'Dearkalyan')
 
 @section('content')
 	@include('layouts.slider')
-
 	<section class="row content-wrap">
 	    <div class="container">
 	        <div class="row" id="post-masonry">
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-image">
-	                <div class="post-wrapper row">
-	                    <div class="featured-content row">
-	                        <a href="single.html"><img src="http://placehold.it/360x270" alt="" class="img-responsive"></a>
-	                    </div>
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
-	                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-gray.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-image">
-	                <div class="post-wrapper row">
-	                    <div class="featured-content row">
-	                        <a href="single.html"><img src="http://placehold.it/360x203" alt="" class="img-responsive"></a>
-	                    </div>
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
-	                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-gray.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
 	            <!--Author Widget-->
 	            <aside class="col-sm-4 widget-author widget widget-with-posts post">
 	                <div class="widget-author-inner row">
@@ -65,72 +24,6 @@
 	                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
 	                </ul>
 	            </aside>
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-gallery">
-	                <div class="post-wrapper row">
-	                    <div class="featured-content row">
-	                        <div class="gallery-of-post">
-	                            <div class="item"><img src="http://placehold.it/360x203" alt=""></div>
-	                            <div class="item"><img src="http://placehold.it/360x203" alt=""></div>
-	                            <div class="item"><img src="http://placehold.it/360x203" alt=""></div>
-	                            <div class="item"><img src="http://placehold.it/360x203" alt=""></div>
-	                            <div class="item"><img src="http://placehold.it/360x203" alt=""></div>
-	                        </div>
-	                    </div>
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
-	                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-gray.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-text">
-	                <div class="post-wrapper row">
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
-	                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-gray.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-video">
-	                <div class="post-wrapper row">
-	                    <div class="featured-content row">
-	                        <a href="single.html">
-	                            <img src="http://placehold.it/360x203" alt="" class="img-responsive">
-	                            <img src="images/play-btn.png" alt="" class="video-mark">
-	                        </a>
-	                    </div>
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
-	                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-gray.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
 	            <!--Twitter Widget-->
 	            <aside class="col-sm-4 widget widget-twitter widget-with-posts post">
 	                <div class="widget-twitter-inner">
@@ -141,62 +34,19 @@
 	                    <div class="row timepast">1 day ago</div>
 	                </div>
 	            </aside>
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-quote">
-	                <div class="post-wrapper row">
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title">If everybody learns this simple art of loving his work, whatever it is, enjoying it without asking for any recognition, we would have more beautiful and celebrating world.</h3>
-	                        <h5 class="quote-maker"><a href="#">osho</a></h5>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">quote</a>, <a href="#">life</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-white.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-link">
-	                <div class="post-wrapper row">
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title"><a href="https://name.com/p5so38a">https://name.com/p5so38a</a></h3>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">link</a>, <a href="#">product</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-gray.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
-	            <!--Blog Post-->
-	            <article class="col-sm-4 post post-masonry post-format-video">
-	                <div class="post-wrapper row">
-	                    <div class="featured-content row">
-	                        <a href="single.html">
-	                            <img src="http://placehold.it/360x203" alt="" class="img-responsive">
-	                            <img src="images/play-btn.png" alt="" class="video-mark">
-	                        </a>
-	                    </div>
-	                    <div class="post-excerpt row">
-	                        <h5 class="post-meta">
-	                            <a href="#" class="date">feb 17, 2016</a>
-	                            <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
-	                        </h5>
-	                        <h3 class="post-title"><a href="single.html">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h3>
-	                        <p>In the broadest sense, is the natural, physical, or material world or universe...</p>
-	                        <footer class="row">
-	                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
-	                            <div class="response-count"><img src="images/comment-icon-gray.png" alt="">5</div>
-	                        </footer>
-	                    </div>
-	                </div>
-	            </article>
+	            @foreach($posts as $post)
+		            @include('posts.post-'.$post->type->slug)
+	            @endforeach
+	            @if(\Auth::check())
+	            	<a href="#" class="btn btn-lg dyn-modal" data-url="{{ route('post.create') }}" data-title="Add Article">
+			            <article class="col-sm-4 post post-masonry post-format-image">
+			            	<div class="post-excerpt text-center">
+				            	<i class="fa fa-plus fa-8x"></i>
+				            	<h3>Add Articles</h3>
+		            		</div>
+			            </article>
+	        		</a>
+        		@endif
 	            <!--Twitter Widget-->
 	            <aside class="col-sm-4 widget widget-instagram widget-with-posts post">
 	                <div class="widget-instagram-inner">
@@ -207,4 +57,43 @@
 	        </div>
 	    </div>
 	</section>
+
+	@include('layouts.modal')
+@stop
+
+@section('script')
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$modal = $('#myModal');
+			
+			$(document).on('click', '.dyn-modal', function(e) {
+				e.preventDefault();
+				$btn = $(this);
+				$url = $btn.data('url');
+				title = $btn.data('title')
+				
+				$modal.find('.modal-title').html(title)
+				$modal.find('.modal-body').html('Loading...');
+				
+				$modal.modal();
+				
+				$.ajax({
+					url: $url,
+					method: 'GET',
+					success: function(response){
+						$modal.find('.modal-body').html(response);
+						$('.post-types').first().trigger('click');
+					}
+				});
+			});
+
+			$(document).on('change', '.post-types', function (){
+				var type = $(this).data('type');
+				$('.additional-content').addClass('hidden').find('input').attr('required', false);
+				$active = $('.type-' + type + '-field');
+				$active.find('input').first().attr('required',true);
+				$active.removeClass('hidden');
+			});
+		});
+	</script>
 @stop

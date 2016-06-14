@@ -15,6 +15,13 @@ Route::get('/', ['as' => 'index', 'uses' => 'FrontController@index']);
 
 Route::auth();
 
-Route::middleware('auth', function() {
-	Route::get('/home', 'AdminController@index');
+Route::get('tag/{tag}', [ 'as' => 'tag.show', 'uses' => 'TagController@show']);
+
+Route::group(['middleware' => 'auth'], function() {
+	Route::get('home', 'AdminController@index');
+	Route::get('post', ['as' => 'post.create', 'uses' => 'PostController@create']);
+	Route::post('post', ['as' => 'post.store', 'uses' => 'PostController@store']);
+	Route::get('post/{post}', ['as' => 'post.show', 'uses' => 'PostController@show']);
+	
+	Route::get('thumb/{thumbnail}', [ 'as' => 'image.thumbs', 'uses' => 'ImageController@thumbnail']);
 });

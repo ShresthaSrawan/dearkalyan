@@ -21,6 +21,7 @@
 
 <!--==========Theme Styles==========-->
 <link href="css/style.css" rel="stylesheet">
+<link href="css/mystyle.css" rel="stylesheet">
 <link href="css/theme/green.css" rel="stylesheet">
 
 <!--========== HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries ==========-->
@@ -32,7 +33,11 @@
 </head>
 <body class="home">
 
-@include('layouts.header')
+@if(isset($fixedheader))
+    @include('layouts.header2')
+@else
+    @include('layouts.header')
+@endif
 
 @yield('content')
 
@@ -46,5 +51,8 @@
 <script src="vendors/imagesLoaded/imagesloaded.pkgd.min.js"></script>
 <script src="vendors/isotope/isotope.pkgd.min.js"></script>
 <script src="js/theme.js"></script>
+
+@yield('script')
+
 </body>
 </html>
