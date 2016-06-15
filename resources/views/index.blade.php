@@ -82,7 +82,10 @@
 					method: 'GET',
 					success: function(response){
 						$modal.find('.modal-body').html(response);
-						$('.post-types').first().trigger('click');
+						if($('.post-types:checked').length > 0)
+							$('.post-types:checked').trigger('change');
+						else
+							$('.post-types').first().trigger('click');
 					}
 				});
 			});

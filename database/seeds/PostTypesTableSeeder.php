@@ -14,7 +14,7 @@ class PostTypesTableSeeder extends Seeder
     {
     	DB::table('post_types')->truncate();
     	
-        $posttypes = ['Article','Image','Video','Gallery', 'Quote', 'Text'];
+        $posttypes = ['Article','Image','Video','Gallery', 'Quote'];
         foreach ($posttypes as $type) {
         	$ptype = new PostType;
         	$ptype->name = $type;

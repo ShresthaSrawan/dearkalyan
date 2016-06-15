@@ -23,8 +23,8 @@ class PostController extends Controller
 
     public function create()
     {
-    	$postTypes = PostType::all();
-    	return view('posts.form', compact('postTypes'));
+        $postTypes = PostType::all();
+        return view('posts.form', compact('postTypes'));
     }
 
     public function store(CreatePostRequest $request)
@@ -38,14 +38,20 @@ class PostController extends Controller
             if( $inputs['type_id'] == PostType::IMAGE )
             {
                 $post->image()->create([])->setPath($request->file('image'));
-            } elseif( $inputs['type_id'] == PostType::GALLERY )
+            }
+            elseif( $inputs['type_id'] == PostType::GALLERY )
             {
-                foreach ($request->file('gallery') as $image) {
+                for ($i=1;$i<=5;$i++) {
+                    $image = $request->file("images.$i.path");
                     if(is_null($image))
                         continue;
                     $post->image()->create([])->setPath($image);
                 }
 
+            }
+            elseif( $inputs['type_id'] == PostType::VIDEO )
+            {
+                $post->video()->create(['url'=>$request->get('video.url')]);
             }
             $tags = explode(',', $request->get('tags'));
 
@@ -66,5 +72,81 @@ class PostController extends Controller
     public function show(Post $post)
     {
         dd($post);
+    }
+
+    public function edit(Post $post)
+    {
+    	$postTypes = PostType::all();
+        return view('posts.form', compact('postTypes', 'post'));
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        DB::transaction(function () use ($request, $post) {
+            $inputs = $request->all();
+            $inputs['slug'] = mb_strimwidth(str_slug($request->get('title')), 0, 32).'-'.time();
+            
+            $post->update($inputs);
+
+            if( $inputs['type_id'] == PostType::IMAGE )
+            {
+                if(!is_null($post->image))
+                    $post->image->delete();
+                $post->image()->create([])->setPath($request->file('image'));
+            }
+            elseif( $inputs['type_id'] == PostType::GALLERY )
+            {
+                if(! $post->images->isEmpty() )
+                    $post->images()->delete();
+                for ($i=1;$i<=5;$i++) {
+                    $image = $request->file("images.$i.path");
+                    if(is_null($image))
+                        continue;
+                    $post->image()->create([])->setPath($image);
+                }
+
+            }
+            elseif( $inputs['type_id'] == PostType::VIDEO )
+            {
+                if(!is_null($post->video))
+                    $post->video->delete();
+                $post->video()->create(['url'=>$request->get('video.url')]);
+            }
+            $tags = explode(',', $request->get('tags'));
+
+            $post->tags()->delete();
+            
+            foreach ($tags as $tag) {
+                $slug = str_slug($tag);
+                $tagExists = Tag::whereSlug($slug)->first();
+                
+                if(!$tagExists)
+                    $tagExists = Tag::create(['name' => $tag, 'slug' => $slug]);
+
+                $post->tags()->save($tagExists);
+            }
+        });
+
+        return redirect()->back()->withSuccess('Post updated!');
+    }
+
+    public function publish(Post $post)
+    {
+        if($post->is_published)
+        {
+            $post->is_published = 0;
+            $post->save();
+            return redirect()->back()->withSuccess('Post unpublished!');
+        } else {
+            $post->is_published = 1;
+            $post->save();
+            return redirect()->back()->withSuccess('Post published!');
+        }
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect()->back()->withSuccess('Post deleted!');
     }
 }

@@ -29,4 +29,5 @@
             </footer>
         </div>
     </div>
+    @include('posts.options')
 </article>

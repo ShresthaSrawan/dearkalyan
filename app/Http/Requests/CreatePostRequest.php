@@ -29,8 +29,12 @@ class CreatePostRequest extends Request
             'body' => 'required_unless:type_id,5',
             'tags' => 'required',
             'image' => 'required_if:type_id,2|image',
-            'video' => 'required_if:type_id,3',
-            'gallery' => 'required_if:type_id,4|min:1'
+            'video.url' => 'required_if:type_id,3|url',
+            'images.1.path' => 'image',
+            'images.2.path' => 'image',
+            'images.3.path' => 'image',
+            'images.4.path' => 'image',
+            'images.5.path' => 'image'
         ];
     }
 }

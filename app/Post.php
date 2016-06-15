@@ -14,6 +14,10 @@ class Post extends Model
 
     protected $dates = ['created_at'];
 
+    protected $casts = [
+        'is_published' => 'boolean'
+    ];
+
     public function image()
     {
         return $this->morphOne('App\Image', 'imageable');
@@ -22,6 +26,11 @@ class Post extends Model
     public function images()
     {
         return $this->morphMany('App\Image', 'imageable');
+    }
+
+    public function video()
+    {
+        return $this->hasOne('App\Video');
     }
 
     public function user()
@@ -67,5 +76,15 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function scopePublished($query)
+    {
+        return $this->where('is_published', '1');
+    }
+
+    public function scopeNotPublished($query)
+    {
+        return $this->where('is_published', '0');
     }
 }
