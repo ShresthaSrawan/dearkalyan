@@ -4,19 +4,19 @@
             <div class="col-sm-4 search-form-col">
                 <form action="#" method="get" class="search-form">
                     <div class="input-group">
-                        <span class="input-group-addon"><img src="images/search-icon-dark.png" alt=""></span>
+                        <span class="input-group-addon"><img src="{{ asset('images/search-icon-dark.png') }}" alt=""></span>
                         <input type="search" class="form-control" placeholder="search">
                     </div>
                 </form>
             </div>
             <div class="col-sm-4 logo-col text-center">
-                <a href="index.html"><img src="images/logo-black-red.png" alt=""></a>
+                <a href="index.html"><img src="{{ asset('images/logo-black.png') }}" alt=""></a>
             </div>
             <div class="col-sm-4 menu-trigger-col">
                 <button class="menu-trigger black pull-right">
                     <span class="active-page">home</span>
-                    <img src="images/menu-align-dark.png" alt="" class="icon-burger">
-                    <img src="images/menu-close-dark.png" alt="" class="icon-cross">
+                    <img src="{{ asset('images/menu-align-dark.png') }}" alt="" class="icon-burger">
+                    <img src="{{ asset('images/menu-close-dark.png') }}" alt="" class="icon-cross">
                 </button>
             </div>
         </div>        

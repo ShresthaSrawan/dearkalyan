@@ -87,4 +87,11 @@ class Post extends Model
     {
         return $this->where('is_published', '0');
     }
+
+    public function next(){
+        return Post::where('id', '>', $this->id)->orderBy('id','asc')->first();
+    }
+    public  function previous(){
+        return Post::where('id', '<', $this->id)->orderBy('id','desc')->first();
+    }
 }

@@ -38,7 +38,7 @@
 		            @include('posts.post-'.$post->type->slug)
 	            @endforeach
 	            @if(\Auth::check())
-	            	<a href="#" class="btn btn-lg dyn-modal" data-url="{{ route('post.create') }}" data-title="Add Article">
+	            	<a href="{{ route('post.create') }}" class="btn btn-lg dyn-modal" data-title="Add Article">
 			            <article class="col-sm-4 post post-masonry post-format-image">
 			            	<div class="post-excerpt text-center">
 				            	<i class="fa fa-plus fa-8x"></i>
@@ -57,37 +57,57 @@
 	        </div>
 	    </div>
 	</section>
+	<section class="row content-wrap">
+	    <div class="container">
+	    	<h1>Gallery</h1>
+	        <div class="grid">
+	        	<div class="grid-sizer"></div>
+	        	<!--Blog Post-->
+				@foreach($featuredImages as $post)
+					@include('featured-images.single')
+				@endforeach
+	        	 @if(\Auth::check())
+	        	 	<div class="grid-item">
+		            	<a href="{{ route('featured-image.create') }}" class="btn btn-lg dyn-modal">
+				            <article class="col-sm-4 post post-masonry post-format-image">
+				            	<div class="post-excerpt text-center">
+					            	<i class="fa fa-plus fa-8x"></i>
+					            	<h3>Add Pictures</h3>
+			            		</div>
+				            </article>
+		        		</a>
+	        		</div>
+        		@endif
+	        </div>
+        </div>
+    </section>
 
 	@include('layouts.modal')
 @stop
 
 @section('script')
-	<script type="text/javascript">
+	<script type="text/javascript">		
 		$(document).ready(function(){
 			$modal = $('#myModal');
 			
-			$(document).on('click', '.dyn-modal', function(e) {
-				e.preventDefault();
-				$btn = $(this);
-				$url = $btn.data('url');
-				title = $btn.data('title')
-				
-				$modal.find('.modal-title').html(title)
-				$modal.find('.modal-body').html('Loading...');
-				
-				$modal.modal();
-				
-				$.ajax({
-					url: $url,
-					method: 'GET',
-					success: function(response){
-						$modal.find('.modal-body').html(response);
-						if($('.post-types:checked').length > 0)
-							$('.post-types:checked').trigger('change');
-						else
-							$('.post-types').first().trigger('click');
-					}
-				});
+			$('.dyn-modal').magnificPopup({
+			  type: 'ajax',
+			  removalDelay: 300,
+			  mainClass: 'mfp-fade',
+			  callbacks: {
+			  	ajaxContentAdded: function(){
+					$('.editor').summernote({
+						height: 300,
+					});
+					if($('.post-types:checked').length > 0)
+						$('.post-types:checked').trigger('change');
+					else
+						$('.post-types').first().trigger('click');
+			  	}
+			  }
+			});
+			$('.dyn-modal').on('mfpOpen', function(){
+
 			});
 
 			$(document).on('change', '.post-types', function (){
@@ -97,6 +117,26 @@
 				$active.find('input').first().attr('required',true);
 				$active.removeClass('hidden');
 			});
+
+			// init Isotope
+			var $grid = $('.grid').isotope({
+			  itemSelector: '.grid-item',
+			  percentPosition: true,
+			  masonry: {
+			    columnWidth: '.grid-sizer'
+			  }
+			});
+			// layout Isotope after each image loads
+			$grid.imagesLoaded().progress( function() {
+			  $grid.isotope('layout');
+			});
+
+			$(".magnific-image").magnificPopup({
+			  type: 'image',
+	          gallery: {
+			    enabled: true 
+			  }
+			})
 		});
 	</script>
 @stop

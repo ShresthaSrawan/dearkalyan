@@ -24,7 +24,8 @@ class PostController extends Controller
     public function create()
     {
         $postTypes = PostType::all();
-        return view('posts.form', compact('postTypes'));
+        $type = 'Create';
+        return view('posts.form', compact('postTypes', 'type'));
     }
 
     public function store(CreatePostRequest $request)
@@ -71,13 +72,14 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        dd($post);
+        return view('posts.show', compact('post'));
     }
 
     public function edit(Post $post)
     {
     	$postTypes = PostType::all();
-        return view('posts.form', compact('postTypes', 'post'));
+        $type = 'Edit';
+        return view('posts.form', compact('postTypes', 'post', 'type'))->render();
     }
 
     public function update(Request $request, Post $post)

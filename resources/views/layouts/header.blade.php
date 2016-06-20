@@ -4,13 +4,13 @@
             <div class="col-xs-4 search-form-col">
                 <form action="#" method="get" class="search-form">
                     <div class="input-group">
-                        <span class="input-group-addon"><img src="images/search-icon-white.png" alt=""></span>
+                        <span class="input-group-addon"><img src="{{ asset('images/search-icon-white.png') }}" alt=""></span>
                         <input type="search" class="form-control" placeholder="search">
                     </div>
                 </form>
             </div>
             <div class="col-xs-4 logo-col text-center">
-                <a href="index.html"><img src="images/logo-white-green.png" alt=""></a>
+                <a href="index.html"><img src="{{ asset('images/logo-white.png') }}" alt=""></a>
             </div>
             <div class="col-xs-4 menu-trigger-col">
                 <div class="pull-right">
@@ -18,8 +18,8 @@
                         <span class="active-page">
                             Home
                         </span>
-                        <img src="images/menu-align-white.png" alt="" class="icon-burger">
-                        <img src="images/menu-close-white.png" alt="" class="icon-cross">
+                        <img src="{{ asset('images/menu-align-white.png') }}" alt="" class="icon-burger">
+                        <img src="{{ asset('images/menu-close-white.png') }}" alt="" class="icon-cross">
                     </button>
                     @if($user = \Auth::user())
                         <a class="btn" href="#" title="{{ $user->name }}">

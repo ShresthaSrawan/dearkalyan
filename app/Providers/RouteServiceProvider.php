@@ -24,7 +24,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
+        $router->bind('featured_image', function($value) {
+            return \App\FeaturedImage::whereSlug($value)->firstOrFail();
+        });
 
         parent::boot($router);
     }

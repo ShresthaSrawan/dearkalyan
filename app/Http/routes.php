@@ -19,14 +19,14 @@ Route::get('tag/{tag}', [ 'as' => 'tag.show', 'uses' => 'TagController@show']);
 
 Route::get('thumb/{thumbnail}', [ 'as' => 'image.thumbs', 'uses' => 'ImageController@thumbnail']);
 
-Route::get('post/{post}', ['as' => 'post.show', 'uses' => 'PostController@show']);
-
 Route::group(['middleware' => 'auth'], function() {
 	Route::get('home', 'AdminController@index');
-	Route::get('post', ['as' => 'post.create', 'uses' => 'PostController@create']);
-	Route::post('post', ['as' => 'post.store', 'uses' => 'PostController@store']);	
-	Route::get('post/{post}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit']);	
+	
 	Route::get('post/{post}/publish', ['as' => 'post.publish', 'uses' => 'PostController@publish']);	
-	Route::put('post/{post}', ['as' => 'post.update', 'uses' => 'PostController@update']);	
-	Route::delete('post/{post}', ['as' => 'post.destroy', 'uses' => 'PostController@destroy']);	
+	Route::get('featured-image/{featured_image}/publish', ['as' => 'featured-image.publish', 'uses' => 'FeaturedImageController@publish']);	
+	Route::resource('featured-image', 'FeaturedImageController', ['except' => ['index', 'show']]);
+	Route::resource('post', 'PostController', ['except' => ['index', 'show']]);
 });
+
+Route::get('post/{post}', ['as' => 'post.show', 'uses' => 'PostController@show']);
+Route::get('featured-image/{featured_image}', ['as' => 'featured-image.show', 'uses' => 'FeaturedImageController@show']);
