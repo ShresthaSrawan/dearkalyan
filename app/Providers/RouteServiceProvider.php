@@ -28,6 +28,10 @@ class RouteServiceProvider extends ServiceProvider
             return \App\FeaturedImage::whereSlug($value)->firstOrFail();
         });
 
+        $router->bind('slider_image', function($value) {
+            return \App\SliderImage::whereSlug($value)->firstOrFail();
+        });
+
         parent::boot($router);
     }
 

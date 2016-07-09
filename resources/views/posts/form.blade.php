@@ -4,9 +4,9 @@
 	</header>
 	<section>
 		@if(isset($post))
-			{{ Form::model($post, ['route' => ['post.update', $post->slug], 'method' => 'PUT', 'files' => true]) }}
+			{{ Form::model($post, ['route' => ['post.update', $post->slug], 'method' => 'PUT', 'files' => true, 'novalidate']) }}
 		@else
-			{{ Form::open(['route' => 'post.store', 'method' => 'POST', 'files' => true]) }}
+			{{ Form::open(['route' => 'post.store', 'method' => 'POST', 'files' => true, 'novalidate']) }}
 		@endif
 			<div class="form-group row">
 				<label for="title" class="col-sm-2 form-control-label">Title</label>

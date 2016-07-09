@@ -24,7 +24,10 @@ Route::group(['middleware' => 'auth'], function() {
 	
 	Route::get('post/{post}/publish', ['as' => 'post.publish', 'uses' => 'PostController@publish']);	
 	Route::get('featured-image/{featured_image}/publish', ['as' => 'featured-image.publish', 'uses' => 'FeaturedImageController@publish']);	
+	Route::get('slider-image/{slider_image}/publish', ['as' => 'slider-image.publish', 'uses' => 'SliderImageController@publish']);
+
 	Route::resource('featured-image', 'FeaturedImageController', ['except' => ['index', 'show']]);
+	Route::resource('slider-image', 'SliderImageController', ['except' => ['index', 'show']]);
 	Route::resource('post', 'PostController', ['except' => ['index', 'show']]);
 });
 

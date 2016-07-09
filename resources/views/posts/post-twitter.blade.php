@@ -1,0 +1,11 @@
+<aside class="col-sm-4 widget widget-twitter widget-with-posts post">
+    <div class="widget-twitter-inner">
+        <h5 class="widget-meta"><i class="fa fa-twitter"></i>Twitter feed <a
+                    href="http://twitter.com/chivalricblog">@chivalricblog</a></h5>
+        <div class="row tweet-texts">
+            <p>Check out new post on my blog <a href="http://twitter.com/#natureshot">#natureshot</a> <a
+                        href="http://bit.ly/blog">http://bit.ly/blog</a></p>
+        </div>
+        <div class="row timepast">1 day ago</div>
+    </div>
+</aside>

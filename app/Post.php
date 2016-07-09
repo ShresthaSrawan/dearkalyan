@@ -70,7 +70,7 @@ class Post extends Model
 
     public function getExcerptAttribute()
     {
-        return mb_strimwidth($this->body, 0, 80, "...");
+        return str_limit(strip_tags($this->body), 180);
     }
 
     public function getRouteKeyName()
@@ -86,6 +86,11 @@ class Post extends Model
     public function scopeNotPublished($query)
     {
         return $this->where('is_published', '0');
+    }
+
+    public function scopeNewest($query)
+    {
+        return $this->orderBy('created_at', 'desc');
     }
 
     public function next(){

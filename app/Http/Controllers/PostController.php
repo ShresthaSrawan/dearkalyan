@@ -72,7 +72,9 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+        $tags = Tag::all();
+        $postTypes = PostType::all();
+        return view('posts.show', compact('post', 'tags', 'postTypes'));
     }
 
     public function edit(Post $post)
@@ -92,9 +94,11 @@ class PostController extends Controller
 
             if( $inputs['type_id'] == PostType::IMAGE )
             {
-                if(!is_null($post->image))
-                    $post->image->delete();
-                $post->image()->create([])->setPath($request->file('image'));
+                if($request->file('image')) {
+                    if(!is_null($post->image))
+                        $post->image->delete();
+                    $post->image()->create([])->setPath($request->file('image'));
+                }
             }
             elseif( $inputs['type_id'] == PostType::GALLERY )
             {
