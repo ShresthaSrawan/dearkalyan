@@ -1,0 +1,200 @@
+/*Color Variables*/
+/*Button*/
+.btn-primary {
+  border-left-color: #613df7;
+  border-right-color: #3d90f7;
+  background-image: -webkit-linear-gradient(left, #613df7 0%, #3d90f7 100%), -webkit-linear-gradient(left, #613df7 0%, #3d90f7 100%);
+  background-image: -moz-linear-gradient(left, #613df7 0%, #3d90f7 100%), -moz-linear-gradient(left, #613df7 0%, #3d90f7 100%);
+  background-image: -o-linear-gradient(left, #613df7 0%, #3d90f7 100%), -o-linear-gradient(left, #613df7 0%, #3d90f7 100%);
+  background-image: linear-gradient(to right, #613df7 0%, #3d90f7 100%), linear-gradient(to right, #613df7 0%, #3d90f7 100%);
+}
+.btn-primary span {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-size: 100% 100%;
+  border-left-color: #613df7;
+  border-right-color: #3d90f7;
+}
+.btn-primary:hover span, .btn-primary:focus span {
+  background: -webkit-linear-gradient(330deg, white 0%, white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+}
+
+/*Featured Post Title hover*/
+.featured-post-carousel h5 a:hover, .featured-post-carousel h5 a:focus {
+  color: #3d90f7;
+}
+.featured-post-carousel h2 a {
+  color: #fff;
+}
+.featured-post-carousel h2 a:hover, .featured-post-carousel h2 a:focus {
+  color: #3d90f7;
+}
+
+/*Copyright*/
+.copyright a {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+
+/*Menu*/
+.column-menu li a span {
+  color: #613df7;
+}
+.column-menu li.open ul li a:hover, .column-menu li.open ul li a:focus {
+  color: #613df7;
+}
+
+.navbar-default #main-navbar .nav li.open a + ul li a:hover, .navbar-default #main-navbar .nav li.open a + ul li a:focus, .navbar-default #main-navbar .nav li.active a + ul li a:hover, .navbar-default #main-navbar .nav li.active a + ul li a:focus {
+  background-image: -moz-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -webkit-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -ms-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+}
+.navbar-default #main-navbar .nav li.active a:after {
+  background-image: -moz-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -webkit-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -ms-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+}
+.navbar-default.onbottom #main-navbar .navbar-nav li.active a:after {
+  background-color: #613df7;
+}
+
+/*Logo By Text*/
+.text-logo span:last-child {
+  color: #613df7;
+}
+
+/*Post Footer Category Style*/
+.post-excerpt .taxonomy {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+.post-excerpt .taxonomy a {
+  color: #3d90f7;
+}
+
+.post-title a:hover, .post-title a:focus {
+  color: #3d90f7;
+}
+
+.taxonomy {
+  background: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #613df7;
+  color: #613df7;
+}
+.taxonomy a {
+  color: #613df7;
+}
+
+.post6 .post-excerpt footer i:hover, .post6 .post-excerpt footer i:focus {
+  color: #613df7;
+}
+
+/*Author Widget*/
+.widget-author .know-more {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+
+.widget-author2 .know-more {
+  color: #613df7;
+}
+
+/*Quote Post*/
+.post-format-quote .post-excerpt {
+  background-image: -moz-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -webkit-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -ms-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+}
+.post-format-quote .post-wrapper:hover .post-excerpt, .post-format-quote .post-wrapper:focus .post-excerpt {
+  background-image: -moz-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -webkit-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -ms-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+}
+
+/*Post Share*/
+.post-share:hover button {
+  background-image: -moz-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -webkit-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -ms-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+}
+
+/*Post Video - Media Left*/
+.has-media-wrap-sm.post-format-video .media .media-left a:after {
+  background-image: -moz-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -webkit-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -ms-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+}
+
+.page-content p a {
+  color: #613df7;
+}
+
+.form-group label {
+  color: #613df7;
+}
+
+/*Single Blog*/
+.single-post-content .post-content blockquote.has-sign:before {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+.single-post-content .post-content blockquote.no-sign p {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+
+/*Thumb Carousel*/
+.thumbCarousel .flexslider .flex-control-nav li a.flex-active {
+  background: #613df7;
+}
+.thumbCarousel #carousel .flex-direction-nav li a:hover, .thumbCarousel #carousel .flex-direction-nav li a:focus {
+  color: #613df7;
+}
+
+.tags .tag {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+.tags .tag:hover, .tags .tag:focus {
+  background-image: -moz-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -webkit-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  background-image: -ms-linear-gradient(0deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: padding-box;
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+}
+
+/*Comment*/
+.comment .media-body h5 .reply-link {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}
+
+.post6.post-format-quote .post-wrapper .post-excerpt .taxonomy {
+  background: -webkit-linear-gradient(330deg, #613df7 0%, #3d90f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3d90f7;
+}

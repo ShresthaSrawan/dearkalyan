@@ -1,10 +1,14 @@
+/.idea
 /vendor
 /node_modules
-/public
 /storage
-/config
 /tests
 /bootstrap
 Homestead.yaml
 Homestead.json
 .env
+/public/images/uploaded/banner/*.jpg
+/public/images/uploaded/featured-image/*.jpg
+/public/images/uploaded/post/*.jpg
+/public/images/uploaded/slider/*.jpg
+/public/images/thumbs/*.jpg

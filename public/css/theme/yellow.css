@@ -1,0 +1,193 @@
+/*Color Variables*/
+/*Button*/
+.btn-primary {
+  border-left-color: #ff9459;
+  border-right-color: #ffcc00;
+  background-image: -webkit-linear-gradient(left, #ff9459 0%, #ffcc00 100%), -webkit-linear-gradient(left, #ff9459 0%, #ffcc00 100%);
+  background-image: -moz-linear-gradient(left, #ff9459 0%, #ffcc00 100%), -moz-linear-gradient(left, #ff9459 0%, #ffcc00 100%);
+  background-image: -o-linear-gradient(left, #ff9459 0%, #ffcc00 100%), -o-linear-gradient(left, #ff9459 0%, #ffcc00 100%);
+  background-image: linear-gradient(to right, #ff9459 0%, #ffcc00 100%), linear-gradient(to right, #ff9459 0%, #ffcc00 100%);
+}
+.btn-primary span {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-size: 100% 100%;
+  border-left-color: #ff9459;
+  border-right-color: #ffcc00;
+}
+.btn-primary:hover span, .btn-primary:focus span {
+  background: -webkit-linear-gradient(330deg, white 0%, white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+}
+
+/*Featured Post Title hover*/
+.featured-post-carousel h5 a:hover, .featured-post-carousel h5 a:focus {
+  color: #ffcc00;
+}
+.featured-post-carousel h2 a {
+  color: #fff;
+}
+.featured-post-carousel h2 a:hover, .featured-post-carousel h2 a:focus {
+  color: #ffcc00;
+}
+
+/*Copyright*/
+.copyright a {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
+
+/*Menu*/
+.column-menu li a span {
+  color: #ffcc00;
+}
+.column-menu li.open ul li a:hover, .column-menu li.open ul li a:focus {
+  color: #ffcc00;
+}
+
+.navbar-default #main-navbar .nav li.open a + ul li a:hover, .navbar-default #main-navbar .nav li.open a + ul li a:focus, .navbar-default #main-navbar .nav li.active a + ul li a:hover, .navbar-default #main-navbar .nav li.active a + ul li a:focus {
+  background-image: -moz-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -webkit-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -ms-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+}
+.navbar-default #main-navbar .nav li.active a:after {
+  background-image: -moz-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -webkit-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -ms-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+}
+.navbar-default.onbottom #main-navbar .navbar-nav li.active a:after {
+  background-color: #ffcc00;
+}
+
+/*Logo By Text*/
+.text-logo span:last-child {
+  color: #ffcc00;
+}
+
+/*Post Footer Category Style*/
+.post-excerpt .taxonomy {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
+.post-excerpt .taxonomy a {
+  color: #ffcc00;
+}
+
+.post-title a:hover, .post-title a:focus {
+  color: #ffcc00;
+}
+
+.taxonomy {
+  background: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffcc00;
+  color: #ffcc00;
+}
+.taxonomy a {
+  color: #ffcc00;
+}
+
+.post6 .post-excerpt footer i:hover, .post6 .post-excerpt footer i:focus {
+  color: #ffcc00;
+}
+
+/*Author Widget*/
+.widget-author .know-more {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
+
+.widget-author2 .know-more {
+  color: #ffcc00;
+}
+
+/*Quote Post*/
+.post-format-quote .post-excerpt {
+  background-image: -moz-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -webkit-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -ms-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+}
+.post-format-quote .post-wrapper:hover .post-excerpt, .post-format-quote .post-wrapper:focus .post-excerpt {
+  background-image: -moz-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -webkit-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -ms-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+}
+
+/*Post Share*/
+.post-share:hover button {
+  background-image: -moz-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -webkit-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -ms-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+}
+
+/*Post Video - Media Left*/
+.has-media-wrap-sm.post-format-video .media .media-left a:after {
+  background-image: -moz-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -webkit-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -ms-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+}
+
+.page-content p a {
+  color: #ffcc00;
+}
+
+.form-group label {
+  color: #ffcc00;
+}
+
+/*Single Blog*/
+.single-post-content .post-content blockquote.has-sign:before {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
+.single-post-content .post-content blockquote.no-sign p {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
+
+/*Thumb Carousel*/
+.thumbCarousel .flexslider .flex-control-nav li a.flex-active {
+  background: #ffcc00;
+}
+.thumbCarousel #carousel .flex-direction-nav li a:hover, .thumbCarousel #carousel .flex-direction-nav li a:focus {
+  color: #ffcc00;
+}
+
+.tags .tag {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
+.tags .tag:hover, .tags .tag:focus {
+  background-image: -moz-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -webkit-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  background-image: -ms-linear-gradient(0deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: padding-box;
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+}
+
+/*Comment*/
+.comment .media-body h5 .reply-link {
+  background: -webkit-linear-gradient(330deg, #ff9459 0%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffcc00;
+}
