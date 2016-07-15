@@ -21,6 +21,26 @@ class PostController extends Controller
         $this->user = Auth::user();
     }
 
+    public function index(Request $request)
+    {
+        $posts = Post::newest();
+
+        if($request->has('tag')) {
+            $tag = $request->get('tag');
+            $posts->whereHas('tags', function($query) use($tag) {
+                $query->where('slug', $tag);
+            });
+        }
+
+        if($request->has('category')) {
+            $category = PostType::whereSlug($request->get('category'))->first();
+            $posts->where('type_id',  $category->id);
+        }
+
+        $posts = $posts->paginate(10);
+        return view('posts.index', compact('posts'));
+    }
+
     public function create()
     {
         $postTypes = PostType::all();
@@ -72,9 +92,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        $tags = Tag::all();
-        $postTypes = PostType::all();
-        return view('posts.show', compact('post', 'tags', 'postTypes'));
+        return view('posts.show', compact('post'));
     }
 
     public function edit(Post $post)

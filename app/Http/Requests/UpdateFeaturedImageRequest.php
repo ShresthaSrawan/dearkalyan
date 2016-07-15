@@ -24,15 +24,7 @@ class UpdateFeaturedImageRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|alpha_spaces',
             'image' => 'image'
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'title.alpha_spaces' => 'Title can accept only alphabets and spaces'
         ];
     }
 }

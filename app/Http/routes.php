@@ -15,8 +15,6 @@ Route::get('/', ['as' => 'index', 'uses' => 'FrontController@index']);
 
 Route::auth();
 
-Route::get('tag/{tag}', [ 'as' => 'tag.show', 'uses' => 'TagController@show']);
-
 Route::get('thumb/{thumbnail}', [ 'as' => 'image.thumbs', 'uses' => 'ImageController@thumbnail']);
 
 Route::group(['middleware' => 'auth'], function() {
@@ -28,8 +26,10 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('featured-image', 'FeaturedImageController', ['except' => ['index', 'show']]);
 	Route::resource('slider-image', 'SliderImageController', ['except' => ['index', 'show']]);
-	Route::resource('post', 'PostController', ['except' => ['index', 'show']]);
+	Route::resource('post', 'PostController', ['except' => ['show', 'index']]);
 });
 
 Route::get('post/{post}', ['as' => 'post.show', 'uses' => 'PostController@show']);
+Route::get('post', ['as' => 'post.index', 'uses' => 'PostController@index']);
+
 Route::get('featured-image/{featured_image}', ['as' => 'featured-image.show', 'uses' => 'FeaturedImageController@show']);

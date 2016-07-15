@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'dob', 'address1', 'address2', 'subtitle', 'description', 'phone', 'email', 'facebook', 'gmail', 'twitter'
     ];
 
     /**
@@ -29,7 +29,7 @@ class User extends Authenticatable
      */
     public function image()
     {
-        return $this->morphOne('App\Models\Image', 'imageable');
+        return $this->morphOne('App\Image', 'imageable');
     }
 
     public function posts()

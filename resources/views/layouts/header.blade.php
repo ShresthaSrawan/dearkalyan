@@ -1,4 +1,4 @@
-<header class="row transparent black header1" data-spy="affix" data-offset-top="0" id="header">
+<header class="row transparent black header1" id="header">
     <div class="container">
         <div class="row top-header">
             <div class="col-xs-4 search-form-col">
@@ -10,7 +10,7 @@
                 </form>
             </div>
             <div class="col-xs-4 logo-col text-center">
-                <a href="index.html"><img src="{{ asset('images/logo-white.png') }}" alt=""></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('images/logo-white.png') }}" alt=""></a>
             </div>
             <div class="col-xs-4 menu-trigger-col">
                 <div class="pull-right">

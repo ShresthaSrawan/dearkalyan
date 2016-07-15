@@ -55,6 +55,7 @@
 {{ Html::script('vendors/imagesLoaded/imagesloaded.pkgd.min.js') }}
 {{ Html::script('vendors/isotope/isotope.pkgd.min.js') }}
 {{ Html::script('vendors/toastr/toastr.min.js') }}
+{{ Html::script('vendors/sticky-kit/jquery.sticky-kit.min.js') }}
 @if(\Auth::check())
   {{ Html::script('vendors/summernote/summernote.min.js') }}
 @endif

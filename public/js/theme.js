@@ -213,6 +213,11 @@
             })
         }
     }
+
+    function affixSidebar()
+    {
+        $('.sidebar').stick_in_parent();
+    }
     
     /*==========================================================================================*/
     /*Function Call*/
@@ -225,5 +230,6 @@
     postShare ();
     thumbSilder();
     initToast();
+    affixSidebar();
     
 })(jQuery)

@@ -189,3 +189,16 @@
   .categories a {
     font-size: 1.3em;
   }
+  .text-lg {
+    font-size: 2em;
+  }
+  .content-wrap {
+    padding: 35px 0 65px;
+}
+article.single-post-content {
+  margin-bottom: 40px;
+}
+.pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #81db34;
+  border-color: #81db34;
+}

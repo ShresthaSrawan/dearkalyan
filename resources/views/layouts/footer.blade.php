@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row top-footer">
             <div class="widget col-sm-3 widget-about">
-                <div class="row m0"><a href="index.html"><img src="images/logo-black-green.png" alt=""></a></div>
+                <div class="row m0"><a href="index.html"><img src="{{ asset('images/logo-black.png') }}" alt=""></a></div>
             </div>
             <div class="widget col-sm-5 widget-menu">
                 <div class="row">

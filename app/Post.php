@@ -10,7 +10,7 @@ class Post extends Model
 
 	protected $fillable = [ 'title', 'slug', 'body', 'type_id', 'author_id', 'is_published' ];
 
-    protected $appends = [ 'execerpt' ];
+    protected $appends = [ 'excerpt' ];
 
     protected $dates = ['created_at'];
 
@@ -98,5 +98,17 @@ class Post extends Model
     }
     public  function previous(){
         return Post::where('id', '<', $this->id)->orderBy('id','desc')->first();
+    }
+
+    /**
+     * @param array $options
+     * @return bool|null
+     * @throws \Exception
+     */
+    public function delete(array $options = array())
+    {
+        if($this->images->count() > 0)
+            $this->images()->delete();
+        return parent::delete($options);
     }
 }

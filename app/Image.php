@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Helpers\FileHelper;
+use Storage;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class Image extends Model
@@ -33,7 +34,7 @@ class Image extends Model
     public function removeImage()
     {
         if (!is_null($this->path) && file_exists($this->path) && $this->path != "") {
-            unlink($this->path);
+            Storage::delete($this->path);
         }
     }
 

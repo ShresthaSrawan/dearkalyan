@@ -14,7 +14,7 @@
                         <div class="row">
                             <h5 class="taxonomy pull-left"><i>in</i>
                             @foreach($post->tags as $key => $tag)
-		                        <a href="{{ route('tag.show', $tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
+		                        <a href="{{ route('post.index', 'tag='.$tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
 		                    @endforeach
                     	</h5>
                             <div class="response-count pull-right"><img src="{{ asset('images/comment-icon-gray.png') }}" alt="">5</div>
@@ -22,7 +22,7 @@
                     </header>
                     <div class="featured-content row m0">
                     	@if($post->isImage())
-                        	<img src="{{ $post->image->thumbnail(750,420) }}" alt="">
+                        	<img src="{{ asset($post->image->path) }}" alt="">
                         @elseif($post->isGallery())
 	                        <div class="thumbCarousel row m0">
 	                            <div id="slider" class="flexslider">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="row m0 tags">
 	                    @foreach($post->tags as $key => $tag)
-	                        <a href="{{ route('tag.show', $tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
+	                        <a href="{{ route('post.index', 'tag='.$tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
 	                    @endforeach
                     </div>
                     
@@ -62,8 +62,8 @@
 	                            <h4>Previous Articles</h4>
 	                            <h2 class="post-title"><a href="{{ route('post.show', $previous->slug) }}">{{ str_limit($previous->title, 100) }}</a></h2>
 	                            <h5 class="taxonomy pull-left"><i>in</i>
-	                            	 @foreach($post->tags as $key => $tag)
-				                        <a href="{{ route('tag.show', $tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
+	                            	@foreach($post->tags as $key => $tag)
+				                        <a href="{{ route('post.index', 'tag='.$tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
 				                    @endforeach
                             	</h5>
 	                        </li>
@@ -73,8 +73,8 @@
 	                            <h4>Next Articles</h4>
 	                            <h2 class="post-title"><a href="{{ route('post.show', $next->slug) }}">{{ str_limit($next->title, 100) }}</a></h2>
 	                            <h5 class="taxonomy pull-left"><i>in</i>
-	                            	 @foreach($post->tags as $key => $tag)
-				                        <a href="{{ route('tag.show', $tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
+	                            	@foreach($post->tags as $key => $tag)
+				                        <a href="{{ route('post.index', 'tag='.$tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
 				                    @endforeach
                             	</h5>
 	                        </li>
@@ -86,7 +86,7 @@
                         <!--Comments-->
                         <div class="media comment">
                             <div class="media-left">
-                                <a href="#"><img src="images/posts/c1.jpg" alt="" class="img-circle"></a>
+                                <a href="#"><img src="{{ asset('images/c1.png') }}" alt="" class="img-circle"></a>
                             </div>
                             <div class="media-body">
                                 <h4><a href="#">Mark Sanders</a></h4>
@@ -95,7 +95,7 @@
                                 <!--Comments-->
                                 <div class="media comment reply">
                                     <div class="media-left">
-                                        <a href="#"><img src="images/posts/c2.jpg" alt="" class="img-circle"></a>
+                                        <a href="#"><img src="{{ asset('images/c2.png') }}" alt="" class="img-circle"></a>
                                     </div>
                                     <div class="media-body">
                                         <h4><a href="#">Mark Sanders</a></h4>
@@ -104,7 +104,7 @@
                                         <!--Comments-->
                                         <div class="media comment reply">
                                             <div class="media-left">
-                                                <a href="#"><img src="images/posts/c1.jpg" alt="" class="img-circle"></a>
+                                                <a href="#"><img src="{{ asset('images/c1.png') }}" alt="" class="img-circle"></a>
                                             </div>
                                             <div class="media-body">
                                                 <h4><a href="#">Mark Sanders</a></h4>
@@ -113,7 +113,7 @@
                                                 <!--Comments-->
                                                 <div class="media comment reply">
                                                     <div class="media-left">
-                                                        <a href="#"><img src="images/posts/c2.jpg" alt="" class="img-circle"></a>
+                                                        <a href="#"><img src="{{ asset('images/c2.png') }}" alt="" class="img-circle"></a>
                                                     </div>
                                                     <div class="media-body">
                                                         <h4><a href="#">Mark Sanders</a></h4>
@@ -130,7 +130,7 @@
                         <!--Comments-->
                         <div class="media comment">
                             <div class="media-left">
-                                <a href="#"><img src="images/posts/c1.jpg" alt="" class="img-circle"></a>
+                                <a href="#"><img src="{{ asset('images/c1.png') }}" alt="" class="img-circle"></a>
                             </div>
                             <div class="media-body">
                                 <h4><a href="#">Mark Sanders</a></h4>
@@ -169,28 +169,10 @@
                     </form>
                 </article>
             </div>
-            <div class="col-md-4 sidebar">               
-                <!--Author Widget-->
-                <aside class="row m0 widget-author widget">
-                    @include('posts.author')
-                </aside>
-                <aside class="row m0 widget-author widget text-left">
-                    <h3 class="text-left">Tags</h3>
-                    @foreach($tags as $tag)
-                        <a href="#" class="tag btn">{{ $tag->name }}</a>
-                    @endforeach
-                </aside>
-                <aside class="row m0 widget-author widget text-left categories">
-                    <h3 class="text-left">Categories</h3>
-                    <ul>
-                        @foreach($postTypes as $category)
-                            <li><a href="#" class="">{{ $category->name }} ({{ $category->posts->count() }})</a></li>
-                        @endforeach
-                    </ul>
-                </aside>
+            <div class="col-md-4 sidebar">
+                @include('layouts.sidebar')
             </div>
         </div>
     </div>
 </section>
-
 @stop

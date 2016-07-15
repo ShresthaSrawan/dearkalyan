@@ -35,7 +35,8 @@ Table of Content:
 /*=========Global==========*/
 /*Prefix*/
 body {
-  background: #f5f4f4;
+  /*background: /#f5f4f4;*/
+  background: #eee;
   font-size: 13px;
 }
 

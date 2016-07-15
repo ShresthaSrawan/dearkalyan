@@ -11,7 +11,7 @@
                 <h5 class="taxonomy">
                     <i>in</i>
                     @foreach($post->tags as $key => $tag)
-                        <a href="{{ route('tag.show', $tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
+                        <a href="{{ route('post.index', 'tag='.$tag->slug) }}">{{ $tag->name }}</a>{{ $post->tags->count() > 1 && ($post->tags->count() - 1) != $key ? ',' : '' }}
                     @endforeach
                 </h5>
                 <div class="response-count"><img src="images/comment-icon-white.png" alt="">5</div>

@@ -24,6 +24,11 @@
                     </a>
                 @endif
             </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <a href="{{ route('post.index') }}" class="text-lg">See All</a>
+                </div>
+            </div>
         </div>
     </section>
     <section class="row content-wrap">

@@ -35,4 +35,16 @@ class FeaturedImage extends Model
     {
         return $this->where('is_published', '0');
     }
+
+    /**
+     * @param array $options
+     * @return bool|null
+     * @throws \Exception
+     */
+    public function delete(array $options = array())
+    {
+        if(!is_null($this->image))
+        $this->image->delete();
+        return parent::delete($options);
+    }
 }
